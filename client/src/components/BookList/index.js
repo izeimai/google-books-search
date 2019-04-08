@@ -9,9 +9,8 @@ export function BookList({ children }) {
   return <ul className="list-group">{children}</ul>;
 }
 
-// RecipeListItem renders a bootstrap list item containing data from the recipe api call
+// BookListItem renders a bootstrap list item containing data from the books api call
 export function BookListItem({
-  thumbnail = "https://placehold.it/300x300",
   title,
   authors,
   description,
