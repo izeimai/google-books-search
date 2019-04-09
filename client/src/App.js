@@ -10,6 +10,9 @@ import Saved from "./pages/Saved";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 
+// API import
+import API from "./utils/API";
+
 class App extends Component {
   state = {
     books: [],

@@ -1,14 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./style.css";
 
+// Changing from <a href> tags to <Link> following the react-router-dom documentation
 function Nav() {
     return (
         <nav className="navbar navbar-dark bg-dark">
-            <a className="navbar-brand" href="/search">
-                Google Books Search
-      </a>
-            <a href="/search">Search</a>
-            <a href="/">Saved</a>
+            <Link to ="/search" className="navbar-brand">
+                Google Books Search</Link>
+            <Link to ="/search">Search</Link>
+            <Link to ="/">Saved</Link>
         </nav>
     );
 }
