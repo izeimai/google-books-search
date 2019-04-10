@@ -9,7 +9,7 @@ function Nav() {
             <Link to ="/search" className="navbar-brand">
                 Google Books Search</Link>
             <Link to ="/search">Search</Link>
-            <Link to ="/">Saved</Link>
+            <Link to ="/saved">Saved</Link>
         </nav>
     );
 }

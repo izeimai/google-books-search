@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -11,23 +11,20 @@ import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 
 
-class App extends Component {
-
-  render() {
-    return (
-      <Router>
-        <div>
-          <Navbar />
-          <Header />
-          <Switch>
-            <Route exact path="/" component={Search} />
-            <Route exact path="/search" component={Search} />
-            <Route exact path="/saved" component={Saved} />
-          </Switch>
-        </div>
-      </Router >
-    );
-  }
+function App() {
+  return (
+    <Router>
+      <div>
+        <Navbar />
+        <Header />
+        <Switch>
+          <Route exact path="/" component={Search} />
+          <Route exact path="/search" component={Search} />
+          <Route exact path="/saved" component={Saved} />
+        </Switch>
+      </div>
+    </Router >
+  );
 }
 
 export default App;

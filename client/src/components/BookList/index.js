@@ -28,7 +28,8 @@ export function BookListItem({
             <h3>{title}</h3>
             <p>Author: {authors}</p>
             <p>Book description: {description}</p>
-            <p href={link}>Link to page: {link}</p>
+            <a href={link}>Link to page{link}</a>
+            
           </Col>
         </Row>
       </Container>

@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import API from "../utils/API";
-import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { BookList, BookListItem } from "../components/BookList";
-import { DeleteBtn } from "../components/DeleteBtn";
+
 
 class Saved extends Component {
   state = {
@@ -22,7 +21,7 @@ class Saved extends Component {
   loadBooks = () => {
     API.getBooks()
       .then(res =>
-        this.setState({ books: res.data, title: "", author: "", description: "" })
+        this.setState({ books: res.data, title: "", author: "", description: "", link: "", image: "" })
       )
       .catch(err => console.log(err));
   };
@@ -44,13 +43,8 @@ class Saved extends Component {
             {this.state.books.length ? (
               <BookList>
                 {this.state.books.map(book => (
-                  <BookListItem key={book._id}>
-                    <Link to={"/books/" + book._id}>
-                      <strong>
-                        {book.title}
-                      </strong>
-                    </Link>
-                    <DeleteBtn onClick={() => this.deleteBook(book._id)} />
+                  <BookListItem key={book._id} title= {book.title} authors={book.authors} description={book.description}>
+                    
                   </BookListItem>
                 ))}
               </BookList>
