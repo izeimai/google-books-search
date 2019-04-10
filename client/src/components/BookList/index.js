@@ -15,7 +15,7 @@ export function BookList({ children }) {
   );
 }
 
-// RecipeListItem renders a bootstrap list item containing data from the recipe api call
+// BookListItem renders a bootstrap list item containing data from the book api call
 export class BookListItem extends React.Component {
   state = {
     showToast: false
@@ -48,14 +48,14 @@ export class BookListItem extends React.Component {
               {this.props.synopsis}
             </p>
             <a target="_blank" href={this.props.link} rel="noopener noreferrer">
-              Link to Book!
+              Link to book information
               </a>
             {(this.props._id) ?
               <RemoveBookBtn
                 id={this.props._id}
                 authors={this.props.authors}
                 title={this.props.title}
-                synopsis={this.props.synopsis}
+                synopsis={this.props.description}
                 link={this.props.link}
                 image={this.props.image}
                 delete={this.props.delete}

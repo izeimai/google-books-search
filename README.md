@@ -5,19 +5,20 @@ App has two pages (Search and Saved) with the default landing page being the Sea
 
 
 ## Technologies used
+* MongoDB and Mongoose (web server)
+* Express.js
 * React (create-react-app)
-* MongoDB 
-* Mongoose (web server)
+* Node.js
 * Google Books API
 https://developers.google.com/books/docs/v1/getting_started#REST
 
 
 ## Challenges in the activity
-It took a while to understand the two different ports 3000 and 3001, and how the front-end with React is using 3001 (so the changes appear in real-time) but any changes to the server side would require restarting the server. I can see the benefits of this type of app especially with group work because one group could be editing the client folder, while the other could work on the server side. 
+It took a while to understand the two different ports 3000 and 3001, and how the front-end with React is using 3001 but any changes to the server side would require restarting the server. I can see the benefits of this type of app especially with group work because one group could be editing the client folder, while the other could work on the server side. 
 A related challenge was to get the APIs straight in my mind; external to the Google Books API and calls to the MongoDB database. Again, it helped that the front-end is distinctly in a client folder to help distinguish the two.
 
 ## Future directions
-I would definitely start over this activity without using Activity 7 as the starting point as indicated in the asssignment directions. 
+I will do over this activity without using Activity 7 as the starting point as indicated in the asssignment directions. I'm also not sure how the toggle action works for the save and delete buttons. 
 
 ---
 

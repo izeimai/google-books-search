@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Col } from "../../components/Grid";
+import { Container, Row, Col } from "../../components/Grid";
 import { BookList, BookListItem } from "../../components/BookList";
 import axios from "axios";
 
@@ -22,8 +22,6 @@ class Saved extends Component {
   }
 
   deleteFromDB = id => {
-    console.log(id);
-
     axios.delete(`/api/books/${id}`)
       .then(
         this.getBooks()
@@ -33,7 +31,7 @@ class Saved extends Component {
 
   render() {
     return (
-      <div>
+      <Container>
         <Row>
           <Col size="md-12">
             {this.state.savedBooks.length > 0 ?
@@ -60,7 +58,7 @@ class Saved extends Component {
             }
           </Col>
         </Row>
-      </div>
+      </Container>
     );
   }
 }
