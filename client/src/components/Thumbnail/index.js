@@ -9,9 +9,7 @@ function Thumbnail({ src }) {
       className="thumbnail"
       role="img"
       aria-label="Recipe Image"
-      style={{
-        backgroundImage: `url(${src})`
-      }}
+      style={{ backgroundImage: `url(${src})` }}
     />
   );
 }

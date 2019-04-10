@@ -37,7 +37,7 @@ class Search extends Component {
         <Col size="md-12">
           <div>
             <input id="bookQ" className="form-control form-control-lg" autoComplete="off" type="text" name="query" onChange={this.handleInput} />
-            <button type="submit" onClick={this.searchBooks} >
+            <button className="text-center" onClick={this.searchBooks} >
               Search for Books
           </button>
 
