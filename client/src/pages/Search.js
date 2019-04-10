@@ -1,14 +1,13 @@
 import React, { Component } from "react";
 import API from "../utils/API";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { Input, FormBtn } from "../components/Form";
-import { BookList, BookListItem } from "../components/BookList";
-import { SaveBtn } from "../components/SaveBtn";
+// import { SaveBtn } from "../components/SaveBtn";
 
 class Search extends Component {
   state = {
-    books: [],
+    results: [],
     title: "",
     authors: [],
     description: "",
@@ -53,37 +52,20 @@ class Search extends Component {
       <Container fluid>
         <Row>
           <Col size="md-12">
-    
-              <Input
-                value={this.state.title}
+              <Input value={this.state.title}
                 onChange={this.handleInputChange}
                 name="title"
-                placeholder="Title (required)"
+                placeholder="Book Title (required)"
               />
-              <FormBtn
-                disabled={!(this.state.title)}
-                onClick={this.handleFormSubmit}
-              >
-                Submit Book
+              <FormBtn disabled={!(this.state.title)} onClick={this.handleFormSubmit}>
+                Search for Book
               </FormBtn>
           </Col>
         </Row>
         <Row>
           <Col size="md-12">
-            <h2>Here are the search results</h2>
-            {this.state.books.length ? (
-              <BookList>
-                {this.state.books.map(book => (
-                  <BookListItem key={book._id}>
-                    <Link to={"/books/" + book._id}>
-                      <strong>
-                        {book.title} by {book.author}
-                      </strong>
-                    </Link>
-                    <SaveBtn onClick={() => this.saveBook(book._id)} />
-                  </BookListItem>
-                ))}
-              </BookList>
+            {this.state.results.length ? (
+              <p>Populating</p>
             ) : (
               <h3>No Results to Display</h3>
             )}

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 // Pages import
 import Search from "./pages/Search";
@@ -19,9 +19,11 @@ class App extends Component {
         <div>
           <Navbar />
           <Header />
+          <Switch>
             <Route exact path="/" component={Search} />
             <Route exact path="/search" component={Search} />
             <Route exact path="/saved" component={Saved} />
+          </Switch>
         </div>
       </Router >
     );

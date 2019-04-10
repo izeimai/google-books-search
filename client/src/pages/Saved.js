@@ -27,29 +27,30 @@ class Saved extends Component {
       .catch(err => console.log(err));
   };
 
-  // 
-  // deleteBook = id => {
-  //   API.deleteBook(id)
-  //     .then(res => this.loadBooks())
-  //     .catch(err => console.log(err));
-  // };
-  // 
+  
+  deleteBook = id => {
+    API.deleteBook(id)
+      .then(res => this.loadBooks())
+      .catch(err => console.log(err));
+  };
+  
 
   render() {
     return (
       <Container fluid>
         <Row>
           <Col size="md-6 sm-12">
+          <h2>Saved Books</h2>
             {this.state.books.length ? (
               <BookList>
                 {this.state.books.map(book => (
                   <BookListItem key={book._id}>
                     <Link to={"/books/" + book._id}>
                       <strong>
-                        {book.title} by {book.author}
+                        {book.title}
                       </strong>
                     </Link>
-                    <DeleteBtn onClick={() => this.delete(book._id)} />
+                    <DeleteBtn onClick={() => this.deleteBook(book._id)} />
                   </BookListItem>
                 ))}
               </BookList>
