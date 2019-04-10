@@ -3,16 +3,20 @@ const URL = "https://www.googleapis.com/books/v1/volumes?q=";
 const API = "&key=AIzaSyBK5Z1kK3J-n3JqBG8SZOlfhPqzUeU--mA";
 
 export default {
-    search: function(query) {
+    // Gets all books
+    getBooks: function () {
+        return axios.get("/api/books");
+    },
+    search: function (query) {
         return axios.get(URL + query + API);
     },
-    saveBook: function(bookObject) {
+    saveBook: function (bookObject) {
         return axios.post('/saved', bookObject);
     },
-    getSavedBook: function() {
+    getSavedBook: function () {
         return axios.get('/getSavedBook');
     },
-    deleteSavedBook: function(id) {
-        return axios.delete('/deleteSavedBook', {data: {bookId: id}})
+    deleteBook: function (id) {
+        return axios.delete('/deleteBook', { data: { bookId: id } })
     }
 }

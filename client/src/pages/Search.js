@@ -1,14 +1,16 @@
 import React, { Component } from "react";
 import API from "../utils/API";
+import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
-import { List, ListItem } from "../components/List";
 import { Input, FormBtn } from "../components/Form";
+import { BookList, BookListItem } from "../components/BookList";
+import { SaveBtn } from "../components/SaveBtn";
 
 class Search extends Component {
   state = {
     books: [],
     title: "",
-    author: "",
+    authors: [],
     description: "",
     link: "",
     image: ""
@@ -23,12 +25,6 @@ class Search extends Component {
       .then(res =>
         this.setState({ books: res.data, title: "", author: "", description: "" })
       )
-      .catch(err => console.log(err));
-  };
-
-  deleteBook = id => {
-    API.deleteBook(id)
-      .then(res => this.loadBooks())
       .catch(err => console.log(err));
   };
 
@@ -57,7 +53,7 @@ class Search extends Component {
       <Container fluid>
         <Row>
           <Col size="md-12">
-            <Form>
+    
               <Input
                 value={this.state.title}
                 onChange={this.handleInputChange}
@@ -70,14 +66,27 @@ class Search extends Component {
               >
                 Submit Book
               </FormBtn>
-            </Form>
           </Col>
         </Row>
         <Row>
           <Col size="md-12">
-          <List>
             <h2>Here are the search results</h2>
-          </List>
+            {this.state.books.length ? (
+              <BookList>
+                {this.state.books.map(book => (
+                  <BookListItem key={book._id}>
+                    <Link to={"/books/" + book._id}>
+                      <strong>
+                        {book.title} by {book.author}
+                      </strong>
+                    </Link>
+                    <SaveBtn onClick={() => this.saveBook(book._id)} />
+                  </BookListItem>
+                ))}
+              </BookList>
+            ) : (
+              <h3>No Results to Display</h3>
+            )}
           </Col>
         </Row>
       </Container>
