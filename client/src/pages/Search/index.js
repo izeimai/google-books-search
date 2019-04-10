@@ -62,7 +62,7 @@ class Search extends Component {
                       book.volumeInfo.description : "No description available"}
                     link={book.volumeInfo.infoLink}
                     image={book.volumeInfo.imageLinks.thumbnail ?
-                      book.volumeInfo.imageLinks.thumbnail : "No Book cover image available"}
+                      book.volumeInfo.imageLinks.thumbnail : "https://i.kym-cdn.com/entries/icons/original/000/027/475/Screen_Shot_2018-10-25_at_11.02.15_AM.png"}
                   />
                 )
               })}
